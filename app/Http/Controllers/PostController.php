@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         // ログインしているユーザーのデータから投稿を取得する
-        $posts = Auth::user()->posts()->orderby('created_at', 'asc')->get();
+        $posts = Auth::user()->posts()->orderby('update_at', 'asc')->get();
         return view('posts.index', compact('posts'));
     }
 
